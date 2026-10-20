@@ -1,0 +1,72 @@
+[
+  {
+    "num": "01",
+    "slug": "direito-previdenciario",
+    "titulo": "Direito Previdenciário",
+    "eyebrow": "INSS e benefícios",
+    "resumo": "As regras previdenciárias estão em constante mudança. Uma análise criteriosa do tempo de contribuição, dos documentos probatórios, da ocorrência de novos eventos e do momento de propor a ação judicial é crucial nesta área.",
+    "abertura": "Entre o direito existir e o benefício ser concedido há um caminho de documentos, prazos e análise técnica.",
+    "corpo": [
+      "Por isso a análise vem primeiro. Levantamento do CNIS, conferência de vínculos, identificação de períodos especiais ou não registrados e comparação entre as regras aplicáveis ao seu caso.",
+      "Só depois disso faz sentido decidir o que pedir e quando pedir. Passando pela via administrativa e, se necessário, pela via judicial."
+    ],
+    "servicos_titulo": "Assuntos atendidos",
+    "servicos": [
+      { "nome": "Aposentadorias", "confirmado": false },
+      { "nome": "Planejamento previdenciário", "confirmado": false },
+      { "nome": "Benefícios por incapacidade", "confirmado": false },
+      { "nome": "Pensão por morte", "confirmado": false },
+      { "nome": "Revisão de benefícios", "confirmado": false },
+      { "nome": "Benefícios assistenciais", "confirmado": false }
+    ],
+    "img": "areas",
+    "seo_title": "Direito Previdenciário",
+    "seo_desc": "Atuação em aposentadorias, planejamento previdenciário, benefícios por incapacidade, pensão por morte e revisão de benefícios do INSS."
+  },
+  {
+    "num": "02",
+    "slug": "inventarios-e-sucessoes",
+    "titulo": "Inventários e Sucessões",
+    "eyebrow": "Patrimônio, família e continuidade",
+    "resumo": "A sucessão familiar disciplina como o patrimônio será dividido entre herdeiros e legatários. A proteção do que foi construído ao longo dos anos passa pela transmissão e regulamentação dos bens — não só em caso de morte, mas também em vida.",
+    "abertura": "Proteger um patrimônio construído ao longo de anos passa pela transmissão e pela regulamentação dos bens, em vida ou depois dela.",
+    "corpo": [
+      "A sucessão familiar disciplina como o patrimônio será dividido entre seus herdeiros e legatários. A proteção de um patrimônio familiar, construído ao longo dos anos, passa pela transmissão e regulamentação dos bens não só em casos de morte, mas também em vida.",
+      "Na prática, o inventário responde a três perguntas: o que existe e como existe, quem tem direito e como transferir. Parece simples, mas é onde as famílias mais encontram dificuldades — bens não registrados, dívidas esquecidas e novos herdeiros costumam apresentar empecilhos difíceis de lidar."
+    ],
+    "servicos_titulo": "Assuntos atendidos",
+    "servicos": [
+      { "nome": "Inventário extrajudicial", "confirmado": false },
+      { "nome": "Inventário judicial", "confirmado": false },
+      { "nome": "Partilha de bens", "confirmado": false },
+      { "nome": "Testamento", "confirmado": false },
+      { "nome": "Planejamento sucessório", "confirmado": false },
+      { "nome": "Arrolamento", "confirmado": false },
+      { "nome": "Pactos antenupciais", "confirmado": true },
+      { "nome": "Doações", "confirmado": true },
+      { "nome": "Cessão de direitos hereditários", "confirmado": true },
+      { "nome": "Constituição de holding", "confirmado": true }
+    ],
+    "faq": [
+      {
+        "p": "Qual a diferença entre inventário judicial e extrajudicial?",
+        "r": "O extrajudicial é feito em cartório, por escritura pública, e atualmente, com as novas diretrizes do Conselho Nacional de Justiça, exige que todos os herdeiros — maiores ou menores, capazes ou incapazes — estejam de comum acordo, e que não haja testamento. Apenas quando qualquer uma dessas condições não se cumpre é que o inventário precisa correr na Justiça."
+      },
+      {
+        "p": "É possível doar 100% dos meus imóveis?",
+        "r": "Depende. Há uma série de avaliações contextuais a serem analisadas: se há herdeiros legítimos, se é o único imóvel, qual o regime de casamento ou de união estável e se haverá cláusula de usufruto."
+      },
+      {
+        "p": "Posso realizar a doação com proteção contra terceiros?",
+        "r": "Sim, perfeitamente possível, desde que utilizada a cláusula específica para o caso."
+      },
+      {
+        "p": "A doação tem incidência de imposto?",
+        "r": "Em regra sim, incide o Imposto de Transmissão Causa Mortis e Doação (ITCMD). Mas há exceções que somente um profissional com experiência na área poderá apontar, conforme o caso."
+      }
+    ],
+    "img": "inventario",
+    "seo_title": "Inventários e Sucessões",
+    "seo_desc": "Inventário judicial e extrajudicial, partilha de bens, testamento, doações, pactos antenupciais, cessão de direitos hereditários e constituição de holding."
+  }
+]

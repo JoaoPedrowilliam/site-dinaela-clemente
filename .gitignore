@@ -1,0 +1,14 @@
+# Saída do build — gerada pelo GitHub Actions a cada push
+build/
+
+# Ferramentas de desenvolvimento
+shots/
+pacote/
+teste.py
+shot.py
+*.zip
+
+# Sistema
+__pycache__/
+.DS_Store
+Thumbs.db

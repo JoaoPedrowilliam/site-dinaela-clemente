@@ -1,0 +1,19 @@
+{
+  "name": "Daniela Clemente — Advogada",
+  "short_name": "Daniela",
+  "icons": [
+    {
+      "src": "assets/img/icone-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/icone-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#2e3234",
+  "background_color": "#f1f0ed",
+  "display": "standalone"
+}

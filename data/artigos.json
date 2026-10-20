@@ -1,0 +1,45 @@
+[
+  {
+    "slug": "modelo-de-artigo",
+    "rascunho": true,
+    "titulo": "Título do artigo em uma linha, direto ao ponto",
+    "resumo": "Uma ou duas frases explicando o que o leitor vai entender ao terminar de ler. Aparece na listagem e na busca do Google.",
+    "categoria": "inventarios-e-sucessoes",
+    "data": "2026-01-01",
+    "leitura": 4,
+    "corpo": [
+      {
+        "tipo": "p",
+        "texto": "Este é um artigo de exemplo. Ele não aparece no site publicado porque está marcado com \"rascunho\": true. Use-o como modelo para escrever os textos reais."
+      },
+      {
+        "tipo": "h2",
+        "texto": "Um subtítulo que organiza a leitura"
+      },
+      {
+        "tipo": "p",
+        "texto": "Parágrafos comuns usam o tipo \"p\". Escreva em frases curtas, sem juridiquês, partindo sempre da dúvida real de quem procura o assunto."
+      },
+      {
+        "tipo": "lista",
+        "itens": [
+          "Primeiro item de uma lista",
+          "Segundo item",
+          "Terceiro item"
+        ]
+      },
+      {
+        "tipo": "destaque",
+        "texto": "Use o tipo \"destaque\" para uma ideia que merece respiro na página. Um por artigo, no máximo."
+      },
+      {
+        "tipo": "h2",
+        "texto": "Como encerrar"
+      },
+      {
+        "tipo": "p",
+        "texto": "Feche resumindo o que o leitor precisa fazer a seguir, sem prometer resultado e sem transformar o texto em anúncio."
+      }
+    ]
+  }
+]
