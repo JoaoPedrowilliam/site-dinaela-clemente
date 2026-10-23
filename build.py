@@ -527,7 +527,7 @@ def p_home():
       </div>
     </div>
     <figure class="hero__figura revelar revelar--imagem" data-atraso="1">
-      {img(variante, 'Daniela Clemente, advogada', sizes='(min-width: 900px) 45vw, 90vw', eager=True, ratio=(1299, 1952))}
+      {img(variante, 'Daniela Clemente, advogada', sizes='(min-width: 1200px) 1100px, (min-width: 900px) 760px, (min-width: 600px) 760px, 95vw', eager=True, ratio=(1299, 1952))}
       <figcaption class="hero__nota">{SITE['nome']} — {SITE['oab']}</figcaption>
     </figure>
   </div>
@@ -536,7 +536,7 @@ def p_home():
 <section class="secao secao--clara manifesto">
   <div class="env manifesto__grade">
     <figure class="manifesto__figura revelar revelar--imagem" data-parallax="0.018">
-      {img('posicionamento', 'Daniela Clemente, advogada', sizes='(min-width: 900px) 38vw, 90vw', ratio=(1299, 1955))}
+      {img('posicionamento', 'Daniela Clemente, advogada', sizes='(min-width: 1200px) 1100px, (min-width: 900px) 760px, (min-width: 600px) 760px, 95vw', ratio=(1299, 1955))}
     </figure>
     <div class="revelar" data-atraso="1">
       <span class="rotulo">Posicionamento</span>
@@ -578,7 +578,7 @@ def p_home():
 <section class="secao secao--clara">
   <div class="env retrato-bloco">
     <figure class="revelar revelar--imagem">
-      {img('sobre', 'Daniela Clemente, advogada', sizes='(min-width: 900px) 42vw, 90vw', ratio=(1300, 1954))}
+      {img('sobre', 'Daniela Clemente, advogada', sizes='(min-width: 1200px) 1100px, (min-width: 900px) 760px, (min-width: 600px) 760px, 95vw', ratio=(1300, 1954))}
     </figure>
     <div class="revelar" data-atraso="1">
       <span class="rotulo">Sobre</span>
@@ -675,7 +675,7 @@ def p_sobre():
       </div>
     </div>
     <figure class="revelar revelar--imagem" data-atraso="1">
-      {img('areas', 'Daniela Clemente', sizes='(min-width: 900px) 42vw, 90vw', ratio=(896, 1348))}
+      {img('areas', 'Daniela Clemente', sizes='(min-width: 1200px) 1100px, (min-width: 900px) 760px, (min-width: 600px) 760px, 95vw', ratio=(896, 1348))}
     </figure>
   </div>
 </section>
@@ -799,7 +799,7 @@ def p_area(a):
       <div class="prosa">{corpo}</div>
     </div>
     <figure class="revelar revelar--imagem" data-atraso="1">
-      {img(a['img'], a['titulo'], sizes='(min-width: 900px) 42vw, 90vw', ratio=(896, 1372))}
+      {img(a['img'], a['titulo'], sizes='(min-width: 1200px) 1100px, (min-width: 900px) 760px, (min-width: 600px) 760px, 95vw', ratio=(896, 1372))}
     </figure>
   </div>
 </section>
@@ -831,7 +831,7 @@ def p_advogada():
 <section class="secao">
   <div class="env retrato-bloco retrato-bloco--integral">
     <figure class="revelar revelar--imagem">
-      {img('advogada', 'Retrato profissional de Daniela Clemente', sizes='(min-width: 900px) 44vw, 90vw', ratio=(1300, 1951))}
+      {img('advogada', 'Retrato profissional de Daniela Clemente', sizes='(min-width: 1200px) 1100px, (min-width: 900px) 760px, (min-width: 600px) 760px, 95vw', ratio=(1300, 1951))}
     </figure>
     <div class="revelar" data-atraso="1">
       <span class="rotulo">Trajetória</span>
