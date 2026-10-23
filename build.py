@@ -345,7 +345,7 @@ def dados_estruturados(pagina, artigo=None):
         "telephone": "+" + SITE["telefone_e164"],
         "email": SITE["email"],
         "sameAs": [SITE["instagram_url"]],
-        "areaServed": SITE["regiao_atuacao"],
+        "areaServed": {"@type": "Country", "name": "Brasil"},
         "knowsAbout": [a["titulo"] for a in AREAS],
     }
     if preenchido(SITE["endereco"]):
@@ -435,6 +435,12 @@ def cta_final(titulo, texto):
   </div>
 </section>"""
 
+
+TEXTO_ABRANGENCIA = (
+    "O atendimento online, por videochamada, alcança clientes em todo o Brasil, com a "
+    "mesma estrutura de acompanhamento e com envio de documentos de forma digital. "
+    "A distância não muda a condução do caso."
+)
 
 ETAPAS = [
     ("Primeiro contato", "Uma conversa inicial para entender o que está acontecendo e verificar se é mesmo uma questão jurídica — às vezes não é, e dizer isso também faz parte do trabalho."),
@@ -622,15 +628,13 @@ def p_sobre():
     if preenchido(SITE["endereco"]):
         paragrafo_atendimento = (
             f"<p>O atendimento presencial acontece em {ph(SITE['endereco'])}, mediante "
-            f"agendamento prévio. O atendimento online, por videochamada, atende clientes "
-            f"em {ph(SITE['regiao_atuacao'])} e em outras localidades, com a mesma "
-            f"estrutura de acompanhamento e envio de documentos de forma digital.</p>"
+            f"agendamento prévio.</p>"
+            f"<p>{TEXTO_ABRANGENCIA}</p>"
         )
     else:
         paragrafo_atendimento = (
-            "<p>O atendimento presencial acontece mediante agendamento prévio. O "
-            "atendimento online, por videochamada, tem a mesma estrutura de "
-            "acompanhamento, com envio de documentos de forma digital.</p>"
+            "<p>O atendimento presencial acontece mediante agendamento prévio.</p>"
+            f"<p>{TEXTO_ABRANGENCIA}</p>"
         )
 
     principios = [
@@ -690,7 +694,7 @@ def p_sobre():
 <section class="secao">
   <div class="env env--estreito revelar">
     <span class="rotulo">Atendimento</span>
-    <h2 style="font-size: var(--t-h2); margin-bottom: 1.5rem;">Presencial e online.</h2>
+    <h2 style="font-size: var(--t-h2); margin-bottom: 1.5rem;">Presencial e online, em todo o Brasil.</h2>
     <div class="prosa">
       {paragrafo_atendimento}
     </div>
@@ -1041,7 +1045,7 @@ def p_contato():
     return topo_pagina(
         [("Início", "/"), ("Contato", None)],
         "Fale comigo",
-        "WhatsApp, telefone, e-mail ou formulário. Escolha o canal mais confortável para você.",
+        "WhatsApp, telefone, e-mail ou formulário. Atendimento presencial e online para todo o Brasil — escolha o canal mais confortável para você.",
     ) + f"""
 <section class="secao">
   <div class="env contato__grade">
@@ -1193,10 +1197,11 @@ def registro():
     paginas = [
         ("/", "Daniela Clemente — Advogada | Previdenciário, Inventários e Sucessões",
          "Advocacia em Direito Previdenciário e em Inventários e Sucessões. "
-         "Atendimento presencial e online. OAB/SP 511.615.", p_home, 1.0),
+         "Atendimento presencial e online para todo o Brasil. OAB/SP 511.615.",
+         p_home, 1.0),
         ("/sobre/", "Sobre a atuação | Daniela Clemente — Advogada",
          "Como funciona o atendimento, o que orienta as decisões e o que esperar desde a "
-         "primeira conversa.", p_sobre, 0.8),
+         "primeira conversa. Atendimento online para todo o Brasil.", p_sobre, 0.8),
         ("/areas-de-atuacao/", "Áreas de atuação | Daniela Clemente — Advogada",
          "Direito Previdenciário e Inventários e Sucessões.",
          p_areas_hub, 0.9),
@@ -1204,8 +1209,8 @@ def registro():
          f"{SITE['profissao']} — {SITE['oab']}. Trajetória, formação e forma de atendimento.",
          p_advogada, 0.8),
         ("/contato/", "Contato | Daniela Clemente — Advogada",
-         "WhatsApp, telefone, e-mail e formulário. Atendimento presencial e online.",
-         p_contato, 0.9),
+         "WhatsApp, telefone, e-mail e formulário. Atendimento presencial e online "
+         "para todo o Brasil.", p_contato, 0.9),
         ("/politica-de-privacidade/", "Política de Privacidade | Daniela Clemente — Advogada",
          "Como os dados enviados por este site são tratados, conforme a LGPD.",
          p_privacidade, 0.3),
