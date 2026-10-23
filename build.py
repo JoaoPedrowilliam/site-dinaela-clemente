@@ -118,7 +118,8 @@ def img(nome, alt, classe="", sizes="100vw", eager=False, ratio=None):
     return (
         "<picture>"
         f'<source type="image/webp" sizes="{sizes}" '
-        f'srcset="{prefixo()}assets/img/{nome}-520.webp 520w, {prefixo()}assets/img/{nome}-760.webp 760w, {prefixo()}assets/img/{nome}-1100.webp 1100w">'
+        f'srcset="{prefixo()}assets/img/{nome}-520.webp 520w, {prefixo()}assets/img/{nome}-760.webp 760w, '
+        f'{prefixo()}assets/img/{nome}-1100.webp 1100w, {prefixo()}assets/img/{nome}-1300.webp 1300w">'
         f'<img{cls} src="{prefixo()}assets/img/{nome}-760.jpg" alt="{alt_esc}" '
         f'{carregamento} decoding="async"{dims}>'
         "</picture>"
@@ -189,9 +190,11 @@ NAV = [
     ("Sobre", "/sobre/"),
     ("Áreas de Atuação", "/areas-de-atuacao/"),
     ("A Advogada", "/a-advogada/"),
-    ("Conteúdos", "/conteudos/"),
+    # Conteúdos entra aqui automaticamente quando houver artigo publicado
     ("Contato", "/contato/"),
 ]
+if ARTIGOS:
+    NAV.insert(4, ("Conteúdos", "/conteudos/"))
 
 
 def cabecalho(atual):
@@ -239,6 +242,10 @@ def cabecalho(atual):
 
 
 def rodape():
+    link_conteudos = (
+        f"""          <li><a href="{url('/conteudos/')}">Conteúdos</a></li>\n"""
+        if ARTIGOS else ""
+    )
     linha_endereco_rodape = (
         f"          <li>{ph(SITE['endereco'])}</li>\n"
         if preenchido(SITE["endereco"]) else ""
@@ -268,8 +275,7 @@ def rodape():
         <ul class="rodape__lista">
           <li><a href="{url('/sobre/')}">Sobre</a></li>
           <li><a href="{url('/a-advogada/')}">A Advogada</a></li>
-          <li><a href="{url('/conteudos/')}">Conteúdos</a></li>
-          <li><a href="{url('/contato/')}">Contato</a></li>
+{link_conteudos}          <li><a href="{url('/contato/')}">Contato</a></li>
           <li><a href="{url('/politica-de-privacidade/')}">Política de Privacidade</a></li>
         </ul>
       </div>
@@ -501,7 +507,7 @@ def p_home():
 <section class="hero">
   <div class="env hero__grade">
     <div>
-      <span class="rotulo revelar">Aposentadoria e Sucessões</span>
+      <span class="rotulo revelar">Previdenciário e Sucessões</span>
       <h1 class="hero__titulo revelar" data-atraso="1">
         Aposentadoria e <em>patrimônio</em>.
       </h1>
@@ -571,7 +577,7 @@ def p_home():
     <div class="revelar" data-atraso="1">
       <span class="rotulo">Sobre</span>
       <h2 class="titulo-secao titulo-secao--solto">
-        Existe uma pessoa por trás de cada processo. Nos dois lados da mesa.
+        Existe uma pessoa por trás de cada processo.
       </h2>
       <div class="prosa">
         <p>
@@ -579,8 +585,8 @@ def p_home():
           você e quem conduz o processo até o fim.
         </p>
         <p>
-          Isso muda a forma de trabalhar. Significa menos volume e mais atenção a cada
-          situação, retorno sobre o andamento mesmo quando não há novidade, e explicações
+          Essa é a forma que eu trabalho. Significa menos volume e mais atenção a cada
+          situação, feedback sobre o andamento mesmo quando não há novidade, e explicações
           que dispensam tradução.
         </p>
       </div>
@@ -640,17 +646,6 @@ def p_sobre():
         for i, (t, d) in enumerate(principios)
     )
 
-    etapas_html = ""
-    for i, (t, d) in enumerate(ETAPAS, 1):
-        etapas_html += f"""
-      <div class="etapa revelar">
-        <span class="etapa__num" aria-hidden="true">0{i}</span>
-        <div>
-          <h3 class="etapa__titulo">{t}</h3>
-          <p class="etapa__texto">{d}</p>
-        </div>
-      </div>"""
-
     return topo_pagina(
         [("Início", "/"), ("Sobre", None)],
         "Uma advocacia de proximidade, para assuntos que não admitem pressa.",
@@ -691,18 +686,6 @@ def p_sobre():
   </div>
 </section>
 
-<section class="secao secao--escura">
-  <div class="monograma-faixa"></div>
-  <div class="env">
-    <div class="revelar bloco-intro">
-      <span class="rotulo rotulo--linha">Como funciona</span>
-      <h2 class="titulo-secao">
-        Do primeiro contato ao acompanhamento.
-      </h2>
-    </div>
-    <div class="etapas">{etapas_html}</div>
-  </div>
-</section>
 
 <section class="secao">
   <div class="env env--estreito revelar">
@@ -1220,9 +1203,6 @@ def registro():
         ("/a-advogada/", f"{SITE['nome']} | Advogada — {SITE['oab']}",
          f"{SITE['profissao']} — {SITE['oab']}. Trajetória, formação e forma de atendimento.",
          p_advogada, 0.8),
-        ("/conteudos/", "Conteúdos | Daniela Clemente — Advogada",
-         "Textos sobre direito previdenciário, inventários e sucessões, escritos em linguagem "
-         "acessível.", p_conteudos, 0.6),
         ("/contato/", "Contato | Daniela Clemente — Advogada",
          "WhatsApp, telefone, e-mail e formulário. Atendimento presencial e online.",
          p_contato, 0.9),
@@ -1230,6 +1210,12 @@ def registro():
          "Como os dados enviados por este site são tratados, conforme a LGPD.",
          p_privacidade, 0.3),
     ]
+    if ARTIGOS:
+        paginas.insert(-2, (
+            "/conteudos/", "Conteúdos | Daniela Clemente — Advogada",
+            "Textos sobre direito previdenciário, inventários e sucessões, escritos em "
+            "linguagem acessível.", p_conteudos, 0.6,
+        ))
     for art in ARTIGOS:
         paginas.append((
             f"/conteudos/{art['slug']}/",

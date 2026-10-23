@@ -12,12 +12,30 @@
     ],
     "servicos_titulo": "Assuntos atendidos",
     "servicos": [
-      { "nome": "Aposentadorias", "confirmado": false },
-      { "nome": "Planejamento previdenciário", "confirmado": false },
-      { "nome": "Benefícios por incapacidade", "confirmado": false },
-      { "nome": "Pensão por morte", "confirmado": false },
-      { "nome": "Revisão de benefícios", "confirmado": false },
-      { "nome": "Benefícios assistenciais", "confirmado": false }
+      {
+        "nome": "Aposentadorias",
+        "confirmado": false
+      },
+      {
+        "nome": "Planejamento previdenciário",
+        "confirmado": false
+      },
+      {
+        "nome": "Benefícios por incapacidade",
+        "confirmado": false
+      },
+      {
+        "nome": "Pensão por morte",
+        "confirmado": false
+      },
+      {
+        "nome": "Revisão de benefícios",
+        "confirmado": false
+      },
+      {
+        "nome": "Benefícios assistenciais",
+        "confirmado": false
+      }
     ],
     "img": "areas",
     "seo_title": "Direito Previdenciário",
@@ -29,23 +47,53 @@
     "titulo": "Inventários e Sucessões",
     "eyebrow": "Patrimônio, família e continuidade",
     "resumo": "A sucessão familiar disciplina como o patrimônio será dividido entre herdeiros e legatários. A proteção do que foi construído ao longo dos anos passa pela transmissão e regulamentação dos bens — não só em caso de morte, mas também em vida.",
-    "abertura": "Proteger um patrimônio construído ao longo de anos passa pela transmissão e pela regulamentação dos bens, em vida ou depois dela.",
+    "abertura": "Proteger um patrimônio construído ao longo dos anos, regulamentar os bens em vida e garantir que a transmissão deles pós-morte seja tranquila e estratégica.",
     "corpo": [
       "A sucessão familiar disciplina como o patrimônio será dividido entre seus herdeiros e legatários. A proteção de um patrimônio familiar, construído ao longo dos anos, passa pela transmissão e regulamentação dos bens não só em casos de morte, mas também em vida.",
       "Na prática, o inventário responde a três perguntas: o que existe e como existe, quem tem direito e como transferir. Parece simples, mas é onde as famílias mais encontram dificuldades — bens não registrados, dívidas esquecidas e novos herdeiros costumam apresentar empecilhos difíceis de lidar."
     ],
     "servicos_titulo": "Assuntos atendidos",
     "servicos": [
-      { "nome": "Inventário extrajudicial", "confirmado": false },
-      { "nome": "Inventário judicial", "confirmado": false },
-      { "nome": "Partilha de bens", "confirmado": false },
-      { "nome": "Testamento", "confirmado": false },
-      { "nome": "Planejamento sucessório", "confirmado": false },
-      { "nome": "Arrolamento", "confirmado": false },
-      { "nome": "Pactos antenupciais", "confirmado": true },
-      { "nome": "Doações", "confirmado": true },
-      { "nome": "Cessão de direitos hereditários", "confirmado": true },
-      { "nome": "Constituição de holding", "confirmado": true }
+      {
+        "nome": "Inventário extrajudicial",
+        "confirmado": false
+      },
+      {
+        "nome": "Inventário judicial",
+        "confirmado": false
+      },
+      {
+        "nome": "Partilha de bens",
+        "confirmado": false
+      },
+      {
+        "nome": "Testamento",
+        "confirmado": false
+      },
+      {
+        "nome": "Planejamento sucessório",
+        "confirmado": false
+      },
+      {
+        "nome": "Arrolamento",
+        "confirmado": false
+      },
+      {
+        "nome": "Pactos antenupciais",
+        "confirmado": true
+      },
+      {
+        "nome": "Doações",
+        "confirmado": true
+      },
+      {
+        "nome": "Cessão de direitos hereditários",
+        "confirmado": true
+      },
+      {
+        "nome": "Constituição de holding",
+        "confirmado": true
+      }
     ],
     "faq": [
       {
