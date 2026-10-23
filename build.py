@@ -115,11 +115,21 @@ def img(nome, alt, classe="", sizes="100vw", eager=False, ratio=None):
             f'{carregamento} decoding="async"{dims}>'
         )
 
+    # O srcset é montado a partir dos arquivos que existem, com a largura real
+    # de cada um. Uma fotografia de origem mais estreita simplesmente não gera
+    # os degraus maiores, e declarar uma largura que o arquivo não tem faria o
+    # navegador escolher errado.
+    degraus = sorted(
+        int(f.stem.rsplit("-", 1)[1])
+        for f in (SRC / "img").glob(f"{nome}-*.webp")
+        if f.stem.rsplit("-", 1)[1].isdigit()
+    )
+    srcset = ", ".join(
+        f"{prefixo()}assets/img/{nome}-{w}.webp {w}w" for w in degraus
+    )
     return (
         "<picture>"
-        f'<source type="image/webp" sizes="{sizes}" '
-        f'srcset="{prefixo()}assets/img/{nome}-520.webp 520w, {prefixo()}assets/img/{nome}-760.webp 760w, '
-        f'{prefixo()}assets/img/{nome}-1100.webp 1100w, {prefixo()}assets/img/{nome}-1300.webp 1300w">'
+        f'<source type="image/webp" sizes="{sizes}" srcset="{srcset}">'
         f'<img{cls} src="{prefixo()}assets/img/{nome}-760.jpg" alt="{alt_esc}" '
         f'{carregamento} decoding="async"{dims}>'
         "</picture>"
