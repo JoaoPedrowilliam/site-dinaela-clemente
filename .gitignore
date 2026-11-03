@@ -1,11 +1,9 @@
-# Saída do build — gerada pelo GitHub Actions a cada push
+# Saída do build. O site publicado vive na raiz do repositório (ver CLAUDE.md),
+# não aqui — build/ é só o resultado intermediário de build.py.
 build/
 
 # Ferramentas de desenvolvimento
-shots/
 pacote/
-teste.py
-shot.py
 *.zip
 
 # Sistema
