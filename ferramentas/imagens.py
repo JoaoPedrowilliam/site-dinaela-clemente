@@ -31,6 +31,16 @@ DESTINO = RAIZ / "src" / "img"
 QUALIDADE_WEBP = 90
 QUALIDADE_JPG = 88
 
+# Fotografias muito escuras precisam de mais qualidade: a compressão deixa
+# blocos visíveis na sombra, que aparecem num monitor de alta densidade, onde
+# o arquivo é exibido quase 1:1. Em posicionamento.jpg, 86% dos pixels estão
+# abaixo de luminância 40 — a q90 os blocos do fundo são visíveis, a q96 não.
+# Compare sempre em resolução nativa, não na largura de exibição: ao reduzir,
+# o navegador borra o artefato e a diferença some.
+QUALIDADE_POR_FOTO = {
+    "posicionamento": 96,
+}
+
 # Degraus do srcset. Um original mais estreito simplesmente não gera os
 # maiores — build.py monta o srcset a partir dos arquivos que existem, com a
 # largura real de cada um, então nada é anunciado sem existir.
@@ -48,6 +58,7 @@ def gerar(origem: Path) -> None:
     for velho in DESTINO.glob(f"{nome}-*.webp"):
         velho.unlink()
 
+    qualidade = QUALIDADE_POR_FOTO.get(nome, QUALIDADE_WEBP)
     larguras = sorted({w for w in DEGRAUS if w < largura} | {largura})
     saidas = []
     for w in larguras:
@@ -59,7 +70,7 @@ def gerar(origem: Path) -> None:
             )
         pil = Image.fromarray(cv2.cvtColor(peq, cv2.COLOR_BGR2RGB))
         alvo = DESTINO / f"{nome}-{w}.webp"
-        pil.save(alvo, "WEBP", quality=QUALIDADE_WEBP, method=6)
+        pil.save(alvo, "WEBP", quality=qualidade, method=6)
         saidas.append(f"{w}={alvo.stat().st_size // 1024}KB")
         if w == 760:
             pil.save(
@@ -69,7 +80,7 @@ def gerar(origem: Path) -> None:
                 optimize=True,
                 progressive=True,
             )
-    print(f"{nome:16s} origem {largura}x{altura}  ->  " + "  ".join(saidas))
+    print(f"{nome:16s} origem {largura}x{altura}  q{qualidade}  ->  " + "  ".join(saidas))
 
 
 def main() -> None:
